@@ -1,4 +1,5 @@
 import type { GatsbyConfig } from 'gatsby';
+import path from 'path';
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -9,7 +10,14 @@ const config: GatsbyConfig = {
   // If you use VSCode you can also use the GraphQL plugin
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
-  plugins: [`gatsby-plugin-root-import`],
+  plugins: [
+    {
+      resolve: `gatsby-plugin-root-import`,
+      options: {
+        '@': path.join(__dirname, 'src'),
+      },
+    },
+  ],
 };
 
 export default config;

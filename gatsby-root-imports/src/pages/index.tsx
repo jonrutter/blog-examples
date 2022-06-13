@@ -1,7 +1,10 @@
 import React from 'react';
 
 // absolute import:
-import { CustomButton } from 'src/components/buttons/custom-button';
+// import { CustomButton } from 'src/components/buttons/custom-button';
+
+// import alias:
+import { CustomButton } from '@/components/buttons/custom-button';
 
 // styles
 const pageStyles = {
