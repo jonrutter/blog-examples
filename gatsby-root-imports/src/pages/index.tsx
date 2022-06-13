@@ -1,5 +1,8 @@
 import React from 'react';
 
+// absolute import:
+import { CustomButton } from 'src/components/buttons/custom-button';
+
 // styles
 const pageStyles = {
   color: '#232129',
@@ -31,12 +34,16 @@ const IndexPage = () => (
       <span style={headingAccentStyles}>— you just made a Gatsby site! </span>
       🎉🎉🎉
     </h1>
-    <div>
+    <p>
       This project was configured to use absolute imports with import aliases,
       for easy file imports. 😎
-    </div>
+    </p>
     <p>
-      Check out my blog post on
+      This is a <CustomButton>Custom Button</CustomButton> component imported
+      from far away!
+    </p>
+    <p>
+      Check out my blog post on{' '}
       <a
         href="https://www.jonrutter.io/blog/gatsby-root-imports"
         style={linkStyle}
