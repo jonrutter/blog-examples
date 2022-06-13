@@ -4,7 +4,10 @@ import React from 'react';
 // import { CustomButton } from 'src/components/buttons/custom-button';
 
 // import alias:
-import { CustomButton } from '@/components/buttons/custom-button';
+// import { CustomButton } from '@/components/buttons/custom-button';
+
+// final, short import
+import { CustomButton, TestComponentOne, TestComponentTwo } from '@/components';
 
 // styles
 const pageStyles = {
@@ -55,6 +58,9 @@ const IndexPage = () => (
       </a>{' '}
       for more information
     </p>
+    {/* These components don't do anything, but they're here for testing */}
+    <TestComponentOne />
+    <TestComponentTwo />
   </main>
 );
 
