@@ -1,8 +1,7 @@
 import * as React from 'react';
-import { PageProps, graphql } from 'gatsby';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
+import { PageProps, graphql, Link } from 'gatsby';
 
-import Layout from '../components/layout';
+import Layout from '../../components/layout';
 
 type BlogNode = {
   frontmatter: {
@@ -10,7 +9,7 @@ type BlogNode = {
     date: string;
   };
   id: string;
-  body: string;
+  slug: string;
 };
 
 type DataProps = {
@@ -27,9 +26,10 @@ const BlogPage = ({ data }: PageProps<DataProps>) => {
     <Layout pageTitle="My Blog Posts">
       {nodes.map((node) => (
         <article key={node.id}>
-          <h2>{node.frontmatter.title}</h2>
+          <h2>
+            <Link to={`/blog/${node.slug}`}>{node.frontmatter.title}</Link>
+          </h2>
           <p>Posted: {node.frontmatter.date}</p>
-          <MDXRenderer>{node.body}</MDXRenderer>
         </article>
       ))}
     </Layout>
@@ -45,7 +45,7 @@ export const query = graphql`
           title
         }
         id
-        body
+        slug
       }
     }
   }
