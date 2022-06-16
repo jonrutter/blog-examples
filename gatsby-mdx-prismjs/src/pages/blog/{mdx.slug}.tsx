@@ -10,6 +10,9 @@ import {
 
 import Layout from '../../components/layout';
 
+import { MDXProvider } from '@mdx-js/react';
+import { CodeBlock } from '../../components/code-block';
+
 type DataProps = {
   mdx: {
     frontmatter: {
@@ -24,6 +27,8 @@ type DataProps = {
     body: string;
   };
 };
+
+let shortcodes = { pre: CodeBlock };
 
 const BlogPost = ({ data }: PageProps<DataProps>) => {
   const image = getImage(data.mdx.frontmatter.hero_image);
@@ -50,7 +55,9 @@ const BlogPost = ({ data }: PageProps<DataProps>) => {
           </p>
         </>
       )}
-      <MDXRenderer>{data.mdx.body}</MDXRenderer>
+      <MDXProvider components={shortcodes}>
+        <MDXRenderer>{data.mdx.body}</MDXRenderer>
+      </MDXProvider>
     </Layout>
   );
 };
