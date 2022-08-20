@@ -7,11 +7,10 @@ import {
   IGatsbyImageData,
   ImageDataLike,
 } from 'gatsby-plugin-image';
-
 import Layout from '../../components/layout';
 
-import { MDXProvider } from '@mdx-js/react';
 import { CodeBlock } from '../../components/code-block';
+import { MDXProvider } from '@mdx-js/react';
 
 type DataProps = {
   mdx: {
@@ -19,7 +18,6 @@ type DataProps = {
       title: string;
       date: string;
       hero_image_alt: string | null;
-      hero_image_caption: string | null;
       hero_image_credit_link: string | null;
       hero_image_credit_text: string | null;
       hero_image: ImageDataLike;
@@ -32,7 +30,6 @@ let shortcodes = { pre: CodeBlock };
 
 const BlogPost = ({ data }: PageProps<DataProps>) => {
   const image = getImage(data.mdx.frontmatter.hero_image);
-  const imageCaption = data.mdx.frontmatter.hero_image_caption;
   const imageAlt = data.mdx.frontmatter.hero_image_alt;
   const imageCredit = data.mdx.frontmatter.hero_image_credit_text;
   const imageLink = data.mdx.frontmatter.hero_image_credit_link;
@@ -46,7 +43,6 @@ const BlogPost = ({ data }: PageProps<DataProps>) => {
             alt={data.mdx.frontmatter.hero_image_alt || ''}
           />
           <p>
-            {imageCaption && `${imageCaption} • `}
             {imageCredit && imageLink ? (
               <>
                 Photo credit: <a href={imageLink}>{imageCredit}</a>
@@ -70,7 +66,6 @@ export const query = graphql`
         title
         date(formatString: "MMMM D, YYYY")
         hero_image_alt
-        hero_image_caption
         hero_image_credit_link
         hero_image_credit_text
         hero_image {
