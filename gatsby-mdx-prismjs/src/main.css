@@ -1,0 +1,13 @@
+pre[class*='language-'] {
+  font-family: monospace;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  word-break: normal;
+  word-spacing: normal;
+  white-space: pre;
+  padding: 2rem 1.5rem;
+  text-align: left;
+  direction: ltr;
+  tab-size: 2;
+  overflow-x: auto;
+}
