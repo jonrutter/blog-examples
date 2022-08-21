@@ -1,17 +1,18 @@
 import React from 'react';
-import Highlight, { defaultProps, Language } from 'prism-react-renderer';
+import Highlight, { defaultProps } from 'prism-react-renderer';
 import vsDark from 'prism-react-renderer/themes/vsDark';
 
 type Props = {
-  children: JSX.Element;
+  children: React.ReactElement;
 };
 
 export const CodeBlock: React.FC<Props> = ({ children }) => {
-  const code = children?.props?.children.trim();
+  console.log(children);
+  const code = children.props.children.trim();
 
-  const className = children?.props?.className || '';
+  const className = children.props.className || 'language-markdown';
   const match = className.match(/language-(?<lang>.*)/);
-  const language: Language = match?.groups?.lang;
+  const language = match?.groups?.lang;
 
   return (
     <Highlight {...defaultProps} code={code} language={language} theme={vsDark}>
