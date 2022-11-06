@@ -26,7 +26,7 @@ type DataProps = {
   };
 };
 
-let shortcodes = { pre: CodeBlock };
+const shortcodes = { pre: CodeBlock };
 
 const BlogPost = ({ data }: PageProps<DataProps>) => {
   const image = getImage(data.mdx.frontmatter.hero_image);
