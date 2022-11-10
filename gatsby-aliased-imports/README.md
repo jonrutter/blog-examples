@@ -1,3 +1,3 @@
-# Gatsby Root Imports
+# Gatsby Aliased Imports
 
-This repo contains the code examples for the blog post [Add absolute file imports to your Gatsby project](https://www.jonrutter.io/blog/gatsby-root-imports).
+This repo contains the code examples for the blog post [Add Aliased File Imports to Your Gatsby Project](https://www.jonrutter.io/blog/gatsby-aliased-imports).
