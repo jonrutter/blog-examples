@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-mdx-prismjs",
+  "name": "gatsby-mdx-syntax-highlighting",
   "version": "1.0.0",
   "private": true,
-  "description": "gatsby-mdx-prismjs",
+  "description": "gatsby-mdx-syntax-highlighting",
   "author": "Jon Rutter",
   "keywords": [
     "gatsby"
