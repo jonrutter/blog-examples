@@ -3,7 +3,7 @@ import path from 'path';
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `Gatsby Root Imports`,
+    title: `Gatsby Aliased Imports`,
     siteUrl: `https://www.yourdomain.tld`,
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.

@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-root-imports",
+  "name": "gatsby-aliased-imports",
   "version": "1.0.0",
   "private": true,
-  "description": "gatsby-root-imports",
+  "description": "gatsby-aliased-imports",
   "author": "Jon Rutter",
   "keywords": [
     "gatsby"
